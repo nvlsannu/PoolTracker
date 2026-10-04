@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoolTracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<<header class="header">
+    <a class="logo" href="#home">🎱 PoolTracker</a>
+
+    <nav class="navigation">
+        <a href="#home">Avaleht</a>
+        <a href="#progress">Minu areng</a>
+        <a href="#training">Treening</a>
+        <a href="#history-section">Ajalugu</a>
+    </nav>
+</header>
+
+    <main class="container">
+      <section class="welcome" id="home"
+            <p class="eyebrow">SINU ISIKLIK TREENINGPÄEVIK</p>
+            <h1>Track your game.<br><span>Improve your game.</span></h1>
+            <p>Jälgi oma treeninguid, mõõda täpsust ja arene iga löögiga.</p>
+            <a class="button" href="#training">Alusta treeningut ↓</a>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <p>Treeninguid</p>
+                <strong id="session-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <p>Katseid kokku</p>
+                <strong id="attempt-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <p>Üldine tabavus</p>
+                <strong id="accuracy">0%</strong>
+            </article>
+        </section>
+
+<section class="panel" id="progress">
+    <h2>Sinu areng</h2>
+    <p class="muted">
+        Jälgi, kuidas sinu tabavus treeningutega muutub.
+    </p>
+
+    <label for="chart-category">Vali kategooria</label>
+    <select id="chart-category">
+        <option value="all">Kõik kategooriad</option>
+        <option value="Löögitäpsus">Löögitäpsus</option>
+        <option value="Lööginurgad">Lööginurgad</option>
+        <option value="Positsioonimäng">Positsioonimäng</option>
+        <option value="Kaitsemäng">Kaitsemäng</option>
+        <option value="Muu">Muu</option>
+    </select>
+
+    <div class="chart-container">
+        <canvas
+            id="progress-chart"
+            role="img"
+            aria-label="Treeningute tabavusprotsendi arengugraafik"
+        ></canvas>
+    </div>
+
+    <p id="chart-empty" class="muted">
+        Salvesta treeningutulemusi, et näha oma arengut.
+    </p>
+</section>
+
+        <section class="panel" id="training">
+            <h2>Lisa treeningtulemus</h2>
+            <p class="muted">Pane kirja, kuidas harjutus läks.</p>
+
+            <form id="training-form">
+                <label for="drill">Harjutuse nimi</label>
+                <input
+                    id="drill"
+                    type="text"
+                    placeholder="Näiteks: sirge löök"
+                    required
+                >
+
+<label for="category">Harjutuse kategooria</label>
+<select id="category" required>
+    <option value="Löögitäpsus">Löögitäpsus</option>
+    <option value="Lööginurgad">Lööginurgad</option>
+    <option value="Positsioonimäng">Positsioonimäng</option>
+    <option value="Kaitsemäng">Kaitsemäng</option>
+    <option value="Muu">Muu</option>
+</select>
+
+                <div class="form-row">
+                    <div>
+                        <label for="attempts">Katsete arv</label>
+                        <input
+                            id="attempts"
+                            type="number"
+                            min="1"
+                            step="1"
+                            placeholder="20"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="hits">Tabamused</label>
+                        <input
+                            id="hits"
+                            type="number"
+                            min="0"
+                            step="1"
+                            placeholder="16"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button class="button" type="submit">Salvesta tulemus</button>
+                <p id="form-message" class="message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="panel" id="history-section"></section>
+            <h2>Treeningute ajalugu</h2>
+            <div id="history">
+                <p class="muted">Sinu esimesed tulemused ilmuvad siia.</p>
+            </div>
+        </section>
+
+        <footer>PoolTracker · Üks löök korraga.</footer>
+    </main>
+</body>
+</html>
