@@ -1,4 +1,12 @@
+const SUPABASE_URL = "https://flidmsxgoxsrlesgmyps.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_FGyytcnGGNnDKGJHV_fgoQ_M2YSezLR";
 
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+console.log("Supabase ühendus loodud!");
 const form = document.querySelector("#training-form");
 const drillInput = document.querySelector("#drill");
 const categoryInput = document.querySelector("#category");
